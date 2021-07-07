@@ -1,10 +1,27 @@
 {%  extends 'base.html' %}
 
 {%  block content %}
+    <style>
 
+        .testing{
+            background-color: yellow;
+            display: inline-block;
+            margin: 1rem;
+            height: 48px;
+            width: 48px;
+            border-radius: .5rem;
+        }
 
-    <div style = "height: 10rem; background-color: aqua; margin :2rem; broder-radius: 1rem;">
+    </style>
+
+    <div style = "height: 20rem; background-color: aqua;
+     margin :2rem; border-radius: 1rem; font-size: 2rem">;
         <h1>TEST</h1>
+    <div class="testing" style="height: 48px; width : 48px">block</div>
+    <div class="testing" style="height: 3em; width : 48px">block</div>
+    <div class="testing" style="height: 1rem; width : 48px">block</div>
+    <div class="testing" style="height: 30%; width : 48px">block</div>
+
     </div>
 
 
