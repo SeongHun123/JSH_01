@@ -1,28 +1,9 @@
 {%  extends 'base.html' %}
 
 {%  block content %}
-    <style>
+    <div style="margin: 2rem; text-align: center">
+        <h1>METHOD</h1>
 
-        .testing{
-            background-color: yellow;
-            display: inline-block;
-            margin: 1rem;
-            height: 48px;
-            width: 48px;
-            border-radius: .5rem;
-        }
-
-    </style>
-
-    <div style = "height: 20rem; background-color: aqua;
-     margin :2rem; border-radius: 1rem; font-size: 2rem">;
-        <h1>TEST</h1>
-    <div class="testing" style="height: 48px; width : 48px">block</div>
-    <div class="testing" style="height: 3em; width : 48px">block</div>
-    <div class="testing" style="height: 1rem; width : 48px">block</div>
-    <div class="testing" style="height: 30%; width : 48px">block</div>
-
+        <h3>{{ text }}</h3>
     </div>
-
-
 {%  endblock %}
