@@ -282,4 +282,12 @@ let magicGrid = new MagicGrid({
   useMin: true
 });
 
+var masonrys = document.getElementsByTagName(qualifiedName:"img")
+
+for (let i =0; masonrys.length; i++) {
+  masonrys[i].addEventListener(type:'load', listener: function (){
+    magicGrid.positionItems();
+  }, options:false)
+}
+
 magicGrid.listen();
