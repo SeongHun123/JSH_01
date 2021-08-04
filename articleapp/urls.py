@@ -13,5 +13,7 @@ urlpatterns = [
 
               path('detail/<int:pk>', ArticleDetailView.as_view(), name='detail'),
 
-              path('update/<int:pk>', ArticleUpdateView.as_view(), name='update')
+              path('update/<int:pk>', ArticleUpdateView.as_view(), name='update'),
+
+              path('delete/<int:pk>', ArticleDetailView.as_view(), name='delete'),
 ]
