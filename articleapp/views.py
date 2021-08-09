@@ -29,8 +29,9 @@ class ArticleCreateView(CreateView):
 
 
 
-class ArticleDetailView(DetailView):
+class ArticleDetailView(DetailView, FormMixin):
     model = Article
+    form_class = CommentCreationForm
     context_object_name = 'target_article'
     template_name = 'articleapp/detail.html'
 
@@ -48,9 +49,8 @@ class ArticleUpdateView(UpdateView):
 
 @method_decorator(article_ownership_required,'get')
 @method_decorator(article_ownership_required,'post')
-class ArticleDeleteView(DeleteView, FormMixin):
+class ArticleDeleteView(DeleteView):
     model = Article
-    form_class = CommentCreationForm
     context_object_name = 'target_article'
     success_url = reverse_lazy('articleapp:list')
     template_name = 'articleapp/detail.html'
