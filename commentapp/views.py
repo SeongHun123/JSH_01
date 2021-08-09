@@ -11,7 +11,7 @@ from commentapp.forms import CommentCreationForm
 class CommentCreateView(CreateView):
     model = comment
     form_class = CommentCreationForm
-
+    template_name = 'commentapp/create.html'
 
     def get_success_url(self):
         return reverse('articleapp:detail', kwargs={'pk': self.object.article.pk})
