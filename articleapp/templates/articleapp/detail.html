@@ -32,9 +32,7 @@
         <hr>
         <div class="text-center my-4">
             {#      댓글      #}
-
             {% for comment in target_article.comment.all %}
-
                 <div class="comment_box">
                     <div>
                         <span style="font-size: 1.3rem;" class="NNS_B">
@@ -45,19 +43,18 @@
                     <div class="my-2">
                         <p>{{ comment.content }}</p>
                     </div>
+                    {% if comment.writer == user %}
+                    <div style="text-align: right">
+                        <a href="{% url 'commentapp:delete' pk=comment.pk %}"
+                           class="btn btn-danger rounded-pill px-5">
+                            Delete
+                        </a>
+                    </div>
+                    {% endif %}
                 </div>
-                {% if comment.writer == user %}
-                <div style = 'text-align: right'>
-                    <a href="{% url 'commentapp:delete' pk=comment.pk%}"
-                        class=" btn btn-danger rounded-pill px-5">
-                        Delete
-                    </a>
-                </div>
-                {% endif %}
-            {% endfor %}
 
+            {% endfor %}
             {% include 'commentapp/create.html' %}
         </div>
-
     </div>
 {% endblock %}
